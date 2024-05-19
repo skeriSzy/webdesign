@@ -1,0 +1,295 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoCraft</title>
+    <style>
+      body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #630000;
+        color: #fff;
+      }
+
+      header {
+        background-color: #222;
+        color: #fff;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 30px;
+        color: #fff;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        padding: 5px 10px;
+        border: 1px solid transparent;
+        transition: color 0.3s, background-color 0.3s;
+      }
+
+      nav a:hover {
+        color: #c0392b;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .intro {
+        text-align: center;
+        padding: 50px 20px;
+        margin: 20px auto;
+        background-color: #FADBD8;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .intro h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #800000; 
+      }
+
+      .intro p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto;
+        color: #4d4d4d; 
+      }
+
+      .featured-item {
+        width: calc(33.33% - 20px);
+        margin: 20px 5px;
+        position: relative;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s;
+        display: inline-block;
+        vertical-align: top;
+        color: #333;
+        height: 400px;
+      }
+
+      .featured-item:hover {
+        transform: scale(1.05);
+      }
+
+      .featured-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .featured-item-content {
+        padding: 15px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .featured-item-content h3 {
+        margin: 10px 0 5px;
+        font-size: 20px;
+        color: #333;
+      }
+
+      .featured-item-content p {
+        margin: 0;
+        font-size: 16px;
+        color: #666;
+      }
+
+      .featured-items-wrapper {
+        text-align: center; 
+      }
+
+      .featured-items-label {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .featured-items-container {
+        display: flex;
+        justify-content: center; 
+      }
+
+      .featured-item-with-description {
+        width: calc(33.33% - 20px);
+        margin: 20px 5px;
+        position: relative;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s;
+        color: #333;
+        height: 500px;
+      }
+
+      .featured-item-with-description:hover {
+        transform: scale(1.05);
+      }
+
+      .featured-item-with-description img {
+        width: 100%;
+        height: 70%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .featured-item-content {
+        height: 30%;
+        padding: 15px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .featured-item-content h3 {
+        margin: 10px 0 5px;
+        font-size: 20px;
+        color: #333;
+      }
+
+      .featured-item-content p {
+        margin: 0;
+        font-size: 16px;
+        color: #666;
+      }
+
+      button {
+        display: inline-block;
+        background-color: #c0392b;
+        color: #fff;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #a93226;
+      }
+
+      footer {
+        background-color: #222;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+        border-radius: 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      footer h2 {
+        color: #fff;
+      }
+
+      footer p {
+        color: #f0f0f0;
+        margin-bottom: 10px;
+      }
+
+      .about, .contact {
+        display: inline-block;
+        width: 45%;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ChronoCraft</h1>
+      <nav>
+        <a href="Website.html">Products</a>
+        <a href="#">Join Us</a>
+        <button id="cartButton">🛒</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h2>Welcome to ChronoCraft</h2>
+        <p>Your ultimate destination for luxury timepieces. Discover our curated selection of the world's finest watches, blending timeless elegance with modern innovation.</p>
+      </section>
+
+      <div class="featured-item">
+        <img src="https://i.pinimg.com/originals/3e/3b/9c/3e3b9cf736c47a764e6e5a0a4559ba03.jpg" alt="Rolex">
+        <div class="featured-item-content">
+          <h3>Rolex</h3>
+        </div>
+      </div>
+
+      <div class="featured-item">
+        <img src="https://wallpapers.com/images/hd/patek-philippe-logo-on-black-b2yoz6pbij1u2fvl.jpg" alt="Patek Philippe">
+        <div class="featured-item-content">
+          <h3>Patek Philippe</h3>
+        </div>
+      </div>
+
+      <div class="featured-item">
+        <img src="https://t4.ftcdn.net/jpg/03/08/91/13/360_F_308911374_fGRIDIPYXi2UAn14huC25LcFgQIFoCjJ.jpg" alt="Omega">
+        <div class="featured-item-content">
+          <h3>Omega</h3>
+        </div>
+      </div>
+    
+      <div class="featured-items-wrapper">
+        <p class="featured-items-label">Featured Items</p>
+        <div class="featured-items-container">
+          <div class="featured-item-with-description">
+            <img src="https://www.omegawatches.com/media/catalog/product/o/m/omega-constellation-globemaster-co-axial-master-chronometer-annual-calendar-41-mm-13033412210001-679a5f.png?w=700" alt="Featured Watch 1">
+            <div class="featured-item-content">
+              <h3>Omega Constellation Globemaster</h3>
+              <p>Experience the epitome of elegance and precision with Omega's iconic timepiece.</p>
+            </div>
+          </div>
+      
+          <div class="featured-item-with-description">
+            <img src="https://static.patek.com/images/articles/face_white/350/5327G_001_1.jpg" alt="Featured Watch 2">
+            <div class="featured-item-content">
+              <h3>Patek Philippe Perpetual Calendar</h3>
+              <p>Experience timeless beauty with Patek Philippe's Perpetual Calendar.</p>
+            </div>
+          </div>
+      
+          <div class="featured-item-with-description">
+            <img src="https://www.omegawatches.com/media/catalog/product/o/m/omega-de-ville-tourbillon-co-axial-master-chronometer-43-mm-52953432299001-e6750b.png?w=700" alt="Featured Watch 3">
+            <div class="featured-item-content">
+              <h3>Omega De Ville Tourbillon</h3>
+              <p>The Omega De Ville Tourbillon is a true marvel of watchmaking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+
+    <footer>
+      <div class="about">
+          <h2>About Us</h2>
+          <p>Welcome to ChronoCraft, where time meets elegance. Established in 2022, ChronoCraft began its journey as a boutique shop dedicated to the discerning connoisseurs of luxury watches. With a passion for craftsmanship and a keen eye for timeless aesthetics, we set out to curate a collection that celebrates the artistry and heritage of horology.</p>
+      </div>
+
+      <div class="contact">
+          <h2>Contact Us</h2>
+          <p>Email: chronocraft@shop.ph</p>
+          <nav>
+            <a href="https://www.facebook.com/justin.baloyo">Facebook ChronoCraft</a>
+            <a href="https://www.instagram.com/">Instagram ChronoCraft</a>
+          </nav>
+          <p>Phone: 0986-615-1108</p>
+      </div>
+    </footer>
+  </body>
+  </html>

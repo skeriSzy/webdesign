@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoCraft</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #630000;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 5px 10px;
+      border: 1px solid transparent;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    nav a:hover {
+      color: #c0392b;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    .container {
+      width: calc(25% - 20px);
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    button {
+      display: inline-block;
+      background-color: #c0392b;
+      color: #fff;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #a93226;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .modal {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+    }
+
+    .modal p {
+      margin-top: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .checkout-button {
+      margin-top: 20px;
+    }
+
+    .orderedItems {
+      display: none;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    .orderedItems h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+    }
+
+    .orderedItemsList {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .orderedItemsList li {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+      border-radius: 10px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    footer h2 {
+      color: #fff;
+    }
+
+    footer p {
+     color: #f0f0f0;
+     margin-bottom: 10px;
+   }
+
+    .about, .contact {
+     display: inline-block;
+     width: 45%;
+     vertical-align: top;  
+   }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>ChronoCraft</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="">Join Us</a>
+      <button id="cartButton">🛒</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-container">
+      <div class="container">
+        <img src="https://media.rolex.com/image/upload/q_auto/f_auto/t_v7/c_limit,w_1920/v1/catalogue/2024/upright-c/m228235-0055" alt="Rolex Day-Date 40">
+        <h2>Rolex Day-Date 40</h2>
+        <p>₱2,273,000</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="container">
+        <img src="https://media.rolex.com/image/upload/q_auto/f_auto/t_v7/c_limit,w_800/v1/catalogue/2024/upright-c/m126509-0001" alt="Rolex Cosmograph Daytona">
+        <h2>Rolex Cosmograph Daytona</h2>
+        <p>₱2,323,500</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="container">
+        <img src="https://media.rolex.com/image/upload/q_auto/f_auto/t_v7/c_limit,w_800/v1/catalogue/2024/upright-c/m126603-0001" alt="Rolex Sea-Dweller">
+        <h2>Rolex Sea-Dweller</h2>
+        <p>₱996,600</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="container">
+        <img src="https://static.patek.com/images/articles/face_white/350/5327G_001_1.jpg" alt="PP Perpetual Calendar">
+        <h2>Patek Philippe Perpetual Calendar</h2>
+        <p>₱3,475,632</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="container">
+        <img src="https://static.patek.com/images/articles/face_white/350/5212A_001_1.jpg" alt="PP Calatrava">
+        <h2>Patek Philippe Calatrava</h2>
+        <p>₱2,379,177</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="container">
+        <img src="https://static.patek.com/images/articles/face_white/350/7118_1200A_001_1.jpg" alt="PP Nautilus">
+        <h2>Patek Philippe Nautilus</h2>
+        <p>₱2,358,269</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="container">
+        <img src="https://www.omegawatches.com/media/catalog/product/o/m/omega-constellation-globemaster-co-axial-master-chronometer-annual-calendar-41-mm-13033412210001-679a5f.png?w=700" alt="Omega Globemaster">
+        <h2>Omega Constellation Globemaster</h2>
+        <p>₱385,771</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="container">
+        <img src="https://www.omegawatches.com/media/catalog/product/o/m/omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31032425004001-391a55.png?w=700" alt="Omega Moonwatch">
+        <h2>Omega Speedmaster Moonwatch</h2>
+        <p>₱305,105</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="container">
+        <img src="https://www.omegawatches.com/media/catalog/product/o/m/omega-de-ville-tourbillon-co-axial-master-chronometer-43-mm-52953432299001-e6750b.png?w=700" alt="Omega De Ville">
+        <h2>Omega De Ville Tourbillon</h2>
+        <p>₱7,889,647</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div id="checkoutModal" class="overlay" style="display: none;">
+        <div class="modal">
+          <span class="close" onclick="closeModal()">×</span>
+          <h2>Checkout</h2>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required><br>
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" required><br>
+          <label for="contact">Contact:</label>
+          <input type="tel" id="contact" name="contact" required><br>
+          <button onclick="checkout()">Confirm Order</button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <div id="orderedItems" class="orderedItems">
+    <h2>Ordered Items</h2>
+    <ul id="orderedItemsList" class="orderedItemsList"></ul>
+  </div>
+
+  <footer>
+    <div class="about">
+        <h2>About Us</h2>
+        <p>Welcome to ChronoCraft, where time meets elegance. Established in 2022, ChronoCraft began its journey as a boutique shop dedicated to the discerning connoisseurs of luxury watches. With a passion for craftsmanship and a keen eye for timeless aesthetics, we set out to curate a collection that celebrates the artistry and heritage of horology.</p>
+    </div>
+
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: chronocraft@shop.ph</p>
+        <nav>
+          <a href="https://www.facebook.com/justin.baloyo">Facebook ChronoCraft</a>
+          <a href="https://www.instagram.com/">Instagram ChronoCraft</a>
+        </nav>
+        <p>Phone: 0986-615-1108</p>
+    </div>
+  </footer>
+
+  <script>
+    var cart = [];
+
+    function addToCart(productName, productPrice) {
+      cart.push({ name: productName, price: productPrice });
+      updateOrderedItems();
+    }
+
+    function updateOrderedItems() {
+    var orderedItemsList = document.getElementById('orderedItemsList');
+    orderedItemsList.innerHTML = '';
+
+    cart.forEach((item, index) => {
+        var listItem = document.createElement('li');
+        listItem.textContent = `${item.name}: ₱${item.price.toLocaleString()} `;
+        
+  
+        var removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', function() {
+            cart.splice(index, 1); 
+            updateOrderedItems(); 
+        });
+        
+        listItem.appendChild(removeButton); 
+        orderedItemsList.appendChild(listItem);
+    });
+  }
+
+    function showModal() {
+      document.getElementById('orderedItems').style.display = 'block';
+    }
+
+    function closeModal() { 
+      document.getElementById('orderedItems').style.display = 'none';
+    }
+
+    function checkout() {
+      var name = document.getElementById('name').value;
+      var address = document.getElementById('address').value;
+      var contact = document.getElementById('contact').value;
+
+      if (name.trim() === '' || address.trim() === '' || contact.trim() === '') {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      alert("You've successfully checked out!");
+      cart = [];
+      closeModal();
+    }
+
+    var addToCartButtons = document.querySelectorAll('.container button');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        var container = this.parentNode;
+        var productName = container.querySelector('h2').innerText;
+        var productPrice = parseFloat(container.querySelector('p').innerText.replace(/[^\d.]/g, ''));
+        addToCart(productName, productPrice);
+        showModal(); 
+      });
+    });
+
+    
+    document.getElementById('cartButton').addEventListener('click', function() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'Checkout.html';
+    });
+  </script>
+
+</body>
+</html>
